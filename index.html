@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>老同学聚会倒计时 · 翻牌时钟</title>
+    <title>南平一中七六届（三班）50周年征集邀约 · 倒计时</title>
     <style>
         :root {
             --bg-deep: #0a0a1a;
@@ -11,8 +11,9 @@
             --card-border: rgba(255, 255, 255, 0.15);
             --gold: #f0c060;
             --gold-light: #fde4a5;
+            --gold-deep: #d4943a;
             --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.75);
+            --text-secondary: rgba(255, 255, 255, 0.8);
             --text-label: rgba(255, 255, 255, 0.55);
             --glow-gold: rgba(240, 192, 96, 0.35);
             --glow-soft: rgba(255, 200, 130, 0.2);
@@ -30,7 +31,8 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'STSong', 'Songti SC', 'Noto Serif SC', 'Helvetica Neue',
+                -apple-system, BlinkMacSystemFont, serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             -webkit-tap-highlight-color: transparent;
@@ -98,8 +100,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: clamp(20px, 4vh, 36px);
-            padding: 20px;
+            gap: clamp(14px, 2.8vh, 28px);
+            padding: 20px 16px;
             width: 100%;
             max-width: 700px;
             animation: fadeInUp 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
@@ -116,75 +118,103 @@
             }
         }
 
-        /* 标题区域 */
+        /* ========== 标题区域 ========== */
         .header-section {
             text-align: center;
-            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s forwards;
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s forwards;
             opacity: 0;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(6px, 1.2vh, 12px);
         }
-        .subtitle-tag {
-            display: inline-block;
-            font-size: clamp(0.7rem, 1.6vw, 0.85rem);
-            letter-spacing: 0.25em;
-            color: var(--gold-light);
-            text-transform: uppercase;
-            background: rgba(240, 192, 96, 0.1);
-            border: 1px solid rgba(240, 192, 96, 0.25);
-            border-radius: 50px;
-            padding: 6px 18px;
-            margin-bottom: 10px;
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-        }
+
         .main-title {
-            font-size: clamp(1.5rem, 4.5vw, 2.4rem);
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            background: linear-gradient(135deg, #fde4a5 0%, #f0c060 35%, #e8a840 65%, #fde4a5 100%);
+            font-size: clamp(1.7rem, 5.5vw, 3rem);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            background: linear-gradient(180deg,
+                    #fff8e7 0%,
+                    #fde4a5 18%,
+                    #f0c060 40%,
+                    #d4943a 62%,
+                    #f0c060 78%,
+                    #fde4a5 92%,
+                    #fff8e7 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            filter: drop-shadow(0 2px 8px rgba(240, 192, 96, 0.4));
-            line-height: 1.3;
+            filter: drop-shadow(0 2px 10px rgba(240, 192, 96, 0.5));
+            line-height: 1.25;
+            text-shadow: none;
         }
-        .main-title .emoji-decor {
-            display: inline-block;
-            -webkit-text-fill-color: initial;
-            color: initial;
+        .main-title .highlight-bracket {
+            -webkit-text-fill-color: #fde4a5;
+            color: #fde4a5;
             filter: none;
-            animation: floatEmoji 3s ease-in-out infinite;
-        }
-        .main-title .emoji-decor:nth-child(1) {
-            animation-delay: 0s;
-        }
-        .main-title .emoji-decor:nth-child(2) {
-            animation-delay: 1.5s;
-        }
-        @keyframes floatEmoji {
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            30% {
-                transform: translateY(-8px) rotate(5deg);
-            }
-            60% {
-                transform: translateY(-3px) rotate(-3deg);
-            }
-            80% {
-                transform: translateY(-6px) rotate(2deg);
-            }
         }
 
-        /* 倒计时网格 */
+        .sub-title {
+            font-size: clamp(1.2rem, 3.8vw, 2rem);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            background: linear-gradient(135deg, #fde4a5 0%, #f0c060 45%, #e8a840 70%, #fde4a5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            filter: drop-shadow(0 1px 6px rgba(240, 192, 96, 0.4));
+            line-height: 1.3;
+        }
+
+        /* 倒计时拉开序幕 */
+        .lead-text {
+            font-size: clamp(0.85rem, 2vw, 1.1rem);
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.22s forwards;
+            opacity: 0;
+            font-weight: 400;
+            position: relative;
+            display: inline-block;
+        }
+        .lead-text::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(240, 192, 96, 0.5), transparent);
+        }
+
+        /* 日期范围 */
+        .date-range {
+            font-size: clamp(0.8rem, 1.8vw, 1rem);
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.28s forwards;
+            opacity: 0;
+            font-weight: 400;
+        }
+        .date-range .arrow {
+            color: var(--gold);
+            margin: 0 6px;
+            font-weight: 300;
+        }
+
+        /* ========== 倒计时网格（2列：天 + 时） ========== */
         .countdown-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: clamp(10px, 2.5vw, 20px);
+            grid-template-columns: 1fr auto 1fr;
+            gap: clamp(8px, 2vw, 18px);
             width: 100%;
-            max-width: 600px;
-            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s forwards;
+            max-width: 420px;
+            align-items: center;
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.36s forwards;
             opacity: 0;
         }
 
@@ -199,6 +229,7 @@
             animation: colonPulse 2s ease-in-out infinite;
             pointer-events: none;
             user-select: none;
+            padding: 0 2px;
         }
         @keyframes colonPulse {
             0%,
@@ -216,7 +247,7 @@
             background: var(--card-bg);
             border: 1.5px solid var(--card-border);
             border-radius: clamp(14px, 3vw, 20px);
-            padding: clamp(12px, 2.5vw, 20px) clamp(6px, 1.5vw, 14px);
+            padding: clamp(14px, 3vw, 22px) clamp(8px, 2vw, 16px);
             text-align: center;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -244,6 +275,7 @@
                     rgba(255, 255, 255, 0.3) 70%,
                     transparent 100%);
             opacity: 0.6;
+            z-index: 1;
         }
         .countdown-card::after {
             content: '';
@@ -252,10 +284,7 @@
             left: 15%;
             right: 15%;
             height: 1px;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(240, 192, 96, 0.4),
-                    transparent);
+            background: linear-gradient(90deg, transparent, rgba(240, 192, 96, 0.4), transparent);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -282,14 +311,8 @@
         .countdown-card.card-glow:nth-child(1) {
             animation-delay: 0s;
         }
-        .countdown-card.card-glow:nth-child(2) {
-            animation-delay: 0.75s;
-        }
         .countdown-card.card-glow:nth-child(3) {
             animation-delay: 1.5s;
-        }
-        .countdown-card.card-glow:nth-child(4) {
-            animation-delay: 2.25s;
         }
         @keyframes cardGlowPulse {
             0%,
@@ -305,7 +328,6 @@
         .flip-unit {
             position: relative;
             width: 100%;
-            /* 透视距离 */
             perspective: 800px;
             margin: 0 auto;
             display: flex;
@@ -319,7 +341,6 @@
             height: auto;
             transform-style: preserve-3d;
             transition: transform var(--flip-duration) cubic-bezier(0.4, 0.0, 0.2, 1);
-            /* 初始状态 */
             transform: rotateX(0deg);
         }
 
@@ -334,20 +355,16 @@
             width: 100%;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
-            /* 数字样式继承 */
             font-size: inherit;
             font-weight: inherit;
             letter-spacing: inherit;
             color: #ffffff;
             line-height: 1;
-            /* 保证高度一致 */
             min-height: 1em;
             padding: 0.1em 0;
         }
 
-        .flip-front {
-            /* 正面默认显示 */
-        }
+        .flip-front {}
 
         .flip-back {
             position: absolute;
@@ -356,18 +373,13 @@
             width: 100%;
             height: 100%;
             transform: rotateX(180deg);
-            /* 背面预先翻转，文字方向正常 */
-            /* 注意：背面的文字在视觉上应该是正向的，因为翻转了两次 */
         }
 
-        /* 为了让背面文字在翻过来后是正立的，需要再旋转一次 */
         .flip-back span {
             display: inline-block;
             transform: rotateX(180deg);
-            /* 抵消父级旋转，使文字可读 */
         }
 
-        /* 数字容器，用于包裹翻牌卡片和标签 */
         .countdown-number-wrapper {
             position: relative;
             display: flex;
@@ -376,151 +388,101 @@
             width: 100%;
         }
 
-        /* 适配原有的数字大小 */
         .countdown-number {
-            font-size: clamp(2rem, 6vw, 3.6rem);
+            font-size: clamp(2.6rem, 8vw, 4.8rem);
             font-weight: 700;
             letter-spacing: 0.02em;
             color: #ffffff;
             line-height: 1;
             transition: color 0.2s ease;
-            /* 移除原有动画，因为现在用翻牌 */
             animation: none !important;
         }
 
         .countdown-label {
             display: block;
-            font-size: clamp(0.65rem, 1.4vw, 0.8rem);
-            letter-spacing: 0.12em;
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            letter-spacing: 0.14em;
             color: var(--text-label);
-            margin-top: clamp(4px, 1vh, 8px);
+            margin-top: clamp(6px, 1.2vh, 10px);
             font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        /* ========== 聚会信息卡片 ========== */
-        .info-card {
-            display: flex;
-            flex-wrap: wrap;
-            gap: clamp(10px, 2vw, 18px);
-            justify-content: center;
-            align-items: center;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: clamp(12px, 2.5vw, 18px);
-            padding: clamp(12px, 2.5vw, 18px) clamp(16px, 3vw, 28px);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.45s forwards;
-            opacity: 0;
-            max-width: 600px;
-            width: 100%;
-        }
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: clamp(0.7rem, 1.5vw, 0.85rem);
-            color: var(--text-secondary);
-            white-space: nowrap;
-            letter-spacing: 0.03em;
-        }
-        .info-icon {
-            font-size: 1.1em;
-            flex-shrink: 0;
-        }
-        .info-divider {
-            width: 1px;
-            height: 16px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 1px;
-            flex-shrink: 0;
-        }
-
-        /* 底部提示 */
-        .footer-hint {
-            font-size: clamp(0.6rem, 1.2vw, 0.7rem);
-            color: rgba(255, 255, 255, 0.3);
-            letter-spacing: 0.08em;
-            text-align: center;
-            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.55s forwards;
-            opacity: 0;
-            margin-top: -4px;
         }
 
         /* ========== 响应式 ========== */
         @media (max-width: 600px) {
             .countdown-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-                max-width: 340px;
+                gap: 10px;
+                max-width: 320px;
             }
             .countdown-separator {
-                display: none;
+                font-size: 1.6rem;
+                padding: 0 1px;
             }
             .countdown-card {
-                padding: 16px 10px;
+                padding: 16px 8px;
                 border-radius: 16px;
             }
             .countdown-number {
-                font-size: clamp(2.2rem, 10vw, 3rem);
+                font-size: clamp(2.4rem, 11vw, 3.6rem);
             }
             .countdown-label {
                 font-size: 0.7rem;
-                margin-top: 4px;
-            }
-            .info-card {
-                gap: 8px;
-                padding: 12px 14px;
-                border-radius: 14px;
-            }
-            .info-item {
-                font-size: 0.7rem;
-                gap: 4px;
-            }
-            .info-divider {
-                height: 12px;
+                margin-top: 5px;
             }
             .main-title {
-                font-size: clamp(1.4rem, 6vw, 1.9rem);
+                font-size: clamp(1.5rem, 7vw, 2rem);
+                letter-spacing: 0.04em;
             }
-            .subtitle-tag {
-                font-size: 0.65rem;
-                padding: 5px 14px;
-                letter-spacing: 0.2em;
+            .sub-title {
+                font-size: clamp(1rem, 5vw, 1.4rem);
+                letter-spacing: 0.05em;
+            }
+            .lead-text {
+                font-size: 0.78rem;
+                letter-spacing: 0.1em;
+            }
+            .date-range {
+                font-size: 0.7rem;
+            }
+            .main-container {
+                gap: 12px;
+                padding: 16px 12px;
             }
         }
 
         @media (max-width: 360px) {
             .countdown-grid {
-                gap: 8px;
-                max-width: 290px;
+                gap: 6px;
+                max-width: 270px;
             }
             .countdown-card {
-                padding: 12px 6px;
+                padding: 12px 4px;
                 border-radius: 12px;
             }
             .countdown-number {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             .countdown-label {
                 font-size: 0.6rem;
+                margin-top: 3px;
             }
-            .info-card {
-                padding: 10px 10px;
-                gap: 5px;
-                border-radius: 12px;
-            }
-            .info-item {
-                font-size: 0.62rem;
+            .countdown-separator {
+                font-size: 1.3rem;
             }
             .main-title {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
-            .subtitle-tag {
-                font-size: 0.6rem;
-                padding: 4px 10px;
+            .sub-title {
+                font-size: 0.9rem;
+            }
+            .lead-text {
+                font-size: 0.68rem;
+            }
+            .date-range {
+                font-size: 0.62rem;
+            }
+            .main-container {
+                gap: 10px;
+                padding: 12px 8px;
             }
         }
 
@@ -533,7 +495,17 @@
                     inset 0 1px 0 rgba(255, 255, 255, 0.1);
             }
             .countdown-number {
-                font-size: 3.8rem;
+                font-size: 5rem;
+            }
+            .countdown-grid {
+                max-width: 500px;
+                gap: 22px;
+            }
+            .main-title {
+                font-size: 3.2rem;
+            }
+            .sub-title {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -548,16 +520,19 @@
 
     <!-- 主内容 -->
     <div class="main-container">
+        <!-- 标题区域 -->
         <div class="header-section">
-            <span class="subtitle-tag">👋 青春不散场</span>
-            <h1 class="main-title">
-                <span class="emoji-decor">🎓</span>
-                老同学聚会倒计时
-                <span class="emoji-decor">✨</span>
-            </h1>
+            <h1 class="main-title">南平一中七六届<span class="highlight-bracket">（</span>三班<span class="highlight-bracket">）</span></h1>
+            <p class="sub-title">50周年征集邀约</p>
         </div>
 
-        <!-- 倒计时区域 (使用翻牌结构) -->
+        <!-- 倒计时拉开序幕 -->
+        <p class="lead-text">倒计时拉开序幕</p>
+
+        <!-- 日期范围 -->
+        <p class="date-range">2026年5月22日<span class="arrow">——</span>7月11日</p>
+
+        <!-- 倒计时区域（仅天+时，翻牌动画） -->
         <div class="countdown-grid" id="countdownGrid">
             <!-- 天 -->
             <div class="countdown-card card-glow" data-unit="days">
@@ -571,6 +546,7 @@
                     <span class="countdown-label">天</span>
                 </div>
             </div>
+            <!-- 分隔符 -->
             <div class="countdown-separator" aria-hidden="true">:</div>
             <!-- 时 -->
             <div class="countdown-card card-glow" data-unit="hours">
@@ -584,94 +560,43 @@
                     <span class="countdown-label">时</span>
                 </div>
             </div>
-            <div class="countdown-separator" aria-hidden="true">:</div>
-            <!-- 分 -->
-            <div class="countdown-card card-glow" data-unit="minutes">
-                <div class="countdown-number-wrapper">
-                    <div class="flip-unit">
-                        <div class="flip-card" id="flipCardMinutes">
-                            <div class="flip-face flip-front countdown-number" id="minutesFront">00</div>
-                            <div class="flip-face flip-back countdown-number" id="minutesBack"><span>00</span></div>
-                        </div>
-                    </div>
-                    <span class="countdown-label">分</span>
-                </div>
-            </div>
-            <div class="countdown-separator" aria-hidden="true">:</div>
-            <!-- 秒 -->
-            <div class="countdown-card card-glow" data-unit="seconds">
-                <div class="countdown-number-wrapper">
-                    <div class="flip-unit">
-                        <div class="flip-card" id="flipCardSeconds">
-                            <div class="flip-face flip-front countdown-number" id="secondsFront">00</div>
-                            <div class="flip-face flip-back countdown-number" id="secondsBack"><span>00</span></div>
-                        </div>
-                    </div>
-                    <span class="countdown-label">秒</span>
-                </div>
-            </div>
         </div>
-
-        <!-- 聚会信息 -->
-        <div class="info-card">
-            <span class="info-item"><span class="info-icon">📅</span> 2026年7月18日</span>
-            <span class="info-divider" aria-hidden="true"></span>
-            <span class="info-item"><span class="info-icon">⏰</span> 中午 12:00</span>
-            <span class="info-divider" aria-hidden="true"></span>
-            <span class="info-item"><span class="info-icon">📍</span> 母校大门口</span>
-        </div>
-        <p class="footer-hint">时光不老 · 我们不散 · 期待重逢</p>
     </div>
 
     <script>
         (function() {
-            // ============ 目标时间 ============
-            const targetDate = new Date(2026, 6, 18, 12, 0, 0); // 2026-7-18 12:00:00
+            // ============ 目标时间：2026年5月22日 00:00:00 ============
+            const targetDate = new Date(2026, 4, 22, 0, 0, 0); // 月份从0开始，4=5月
             const targetTime = targetDate.getTime();
 
             // 翻牌卡片元素
             const flipCards = {
                 days: document.getElementById('flipCardDays'),
                 hours: document.getElementById('flipCardHours'),
-                minutes: document.getElementById('flipCardMinutes'),
-                seconds: document.getElementById('flipCardSeconds'),
             };
             const frontFaces = {
                 days: document.getElementById('daysFront'),
                 hours: document.getElementById('hoursFront'),
-                minutes: document.getElementById('minutesFront'),
-                seconds: document.getElementById('secondsFront'),
             };
             const backFaces = {
                 days: document.getElementById('daysBack'),
                 hours: document.getElementById('hoursBack'),
-                minutes: document.getElementById('minutesBack'),
-                seconds: document.getElementById('secondsBack'),
             };
 
-            // 记录当前显示的数字，用于判断是否变化
+            // 记录当前显示的数字
             const currentValues = {
                 days: null,
                 hours: null,
-                minutes: null,
-                seconds: null,
             };
 
-            // 标记是否正在翻转，防止快速连续触发
+            // 翻转锁
             const isFlipping = {
                 days: false,
                 hours: false,
-                minutes: false,
-                seconds: false,
             };
 
-            // 星空
+            // ============ 星空生成 ============
             const starsContainer = document.getElementById('starsContainer');
-            const canvas = document.getElementById('particleCanvas');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            const isMobile = window.innerWidth < 600;
-            const particleCount = isMobile ? 28 : 55;
 
             function createStars() {
                 const count = window.innerWidth < 600 ? 50 : 100;
@@ -688,6 +613,13 @@
                 starsContainer.innerHTML = html;
             }
             createStars();
+
+            // ============ Canvas粒子系统 ============
+            const canvas = document.getElementById('particleCanvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const isMobile = window.innerWidth < 600;
+            const particleCount = isMobile ? 28 : 55;
 
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
@@ -726,7 +658,9 @@
                 ctx.globalAlpha = p.opacity;
                 const color = `hsl(${p.hue}, ${p.saturation}%, ${p.lightness}%)`;
                 if (p.shape === 'diamond') {
-                    const cx = p.x, cy = p.y, s = p.size;
+                    const cx = p.x,
+                        cy = p.y,
+                        s = p.size;
                     ctx.fillStyle = color;
                     ctx.shadowColor = color;
                     ctx.shadowBlur = s * 2.5;
@@ -756,8 +690,10 @@
                 p.y += p.speedY;
                 p.x += p.speedX + Math.sin(p.wobbleOffset + performance.now() * p.wobbleSpeed) * p.wobbleAmp * 0.3;
                 p.wobbleOffset += p.wobbleSpeed * 0.5;
-                if (p.y > canvas.height + p.size * 3) { p.y = -p.size * 4;
-                    p.x = Math.random() * canvas.width; }
+                if (p.y > canvas.height + p.size * 3) {
+                    p.y = -p.size * 4;
+                    p.x = Math.random() * canvas.width;
+                }
                 if (p.x > canvas.width + p.size * 2) p.x = -p.size * 2;
                 if (p.x < -p.size * 2) p.x = canvas.width + p.size * 2;
                 p.opacity += Math.sin(performance.now() * 0.001 + p.wobbleOffset) * 0.003;
@@ -766,8 +702,10 @@
 
             function animateParticles() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (const p of particles) { updateParticle(p);
-                    drawParticle(p); }
+                for (const p of particles) {
+                    updateParticle(p);
+                    drawParticle(p);
+                }
                 requestAnimationFrame(animateParticles);
             }
             animateParticles();
@@ -779,11 +717,10 @@
 
             function triggerFlip(unit, newValueStr) {
                 if (isFlipping[unit]) {
-                    // 如果正在翻转，先强制完成（直接更新正面并移除动画类）
+                    // 强制完成当前翻转
                     const card = flipCards[unit];
                     card.classList.remove('flipping');
                     frontFaces[unit].textContent = newValueStr;
-                    // 更新背面文本以防下次需要
                     backFaces[unit].querySelector('span').textContent = newValueStr;
                     isFlipping[unit] = false;
                     return;
@@ -791,18 +728,13 @@
 
                 const card = flipCards[unit];
                 const backSpan = backFaces[unit].querySelector('span');
-                // 设置背面为新数字
                 backSpan.textContent = newValueStr;
-                // 标记开始翻转
                 isFlipping[unit] = true;
                 card.classList.add('flipping');
 
-                // 动画结束后更新正面并重置翻转状态
                 const onTransitionEnd = () => {
                     card.removeEventListener('transitionend', onTransitionEnd);
-                    // 更新正面文字为新数字
                     frontFaces[unit].textContent = newValueStr;
-                    // 移除翻转类（瞬间回到0度，视觉上因为正面已更新，所以无变化）
                     card.classList.remove('flipping');
                     isFlipping[unit] = false;
                 };
@@ -814,25 +746,14 @@
                 const diff = targetTime - now;
 
                 if (diff <= 0) {
-                    // 聚会时间到
-                    const title = document.querySelector('.main-title');
-                    if (title && !title.dataset.updated) {
-                        title.innerHTML =
-                            '<span class="emoji-decor">🎉</span> 聚会时间到！<span class="emoji-decor">🥳</span>';
-                        title.dataset.updated = '1';
+                    // 倒计时结束——征集已拉开序幕
+                    const leadText = document.querySelector('.lead-text');
+                    if (leadText && !leadText.dataset.updated) {
+                        leadText.textContent = '🎉 征集进行中';
+                        leadText.dataset.updated = '1';
+                        leadText.style.color = 'rgba(240,192,96,0.9)';
                     }
-                    const subtitle = document.querySelector('.subtitle-tag');
-                    if (subtitle && !subtitle.dataset.updated) {
-                        subtitle.textContent = '🎊 欢聚时刻';
-                        subtitle.dataset.updated = '1';
-                    }
-                    const footer = document.querySelector('.footer-hint');
-                    if (footer && !footer.dataset.updated) {
-                        footer.textContent = '同学们，好久不见！';
-                        footer.dataset.updated = '1';
-                    }
-                    // 将所有数字置为00并触发翻转
-                    ['days', 'hours', 'minutes', 'seconds'].forEach(u => {
+                    ['days', 'hours'].forEach(u => {
                         if (currentValues[u] !== '00') {
                             triggerFlip(u, '00');
                             currentValues[u] = '00';
@@ -843,15 +764,10 @@
 
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
                 const daysStr = padZero(days);
                 const hoursStr = padZero(hours);
-                const minutesStr = padZero(minutes);
-                const secondsStr = padZero(seconds);
 
-                // 检查变化并触发翻牌
                 if (currentValues.days !== daysStr) {
                     triggerFlip('days', daysStr);
                     currentValues.days = daysStr;
@@ -860,33 +776,28 @@
                     triggerFlip('hours', hoursStr);
                     currentValues.hours = hoursStr;
                 }
-                if (currentValues.minutes !== minutesStr) {
-                    triggerFlip('minutes', minutesStr);
-                    currentValues.minutes = minutesStr;
-                }
-                if (currentValues.seconds !== secondsStr) {
-                    triggerFlip('seconds', secondsStr);
-                    currentValues.seconds = secondsStr;
-                }
             }
 
-            // 初始化当前值并显示（无动画）
+            // 初始化显示
             function initDisplay() {
                 const now = Date.now();
                 const diff = targetTime - now;
                 if (diff <= 0) {
-                    ['days', 'hours', 'minutes', 'seconds'].forEach(u => {
+                    ['days', 'hours'].forEach(u => {
                         frontFaces[u].textContent = '00';
                         backFaces[u].querySelector('span').textContent = '00';
                         currentValues[u] = '00';
                     });
+                    const leadText = document.querySelector('.lead-text');
+                    if (leadText) {
+                        leadText.textContent = '🎉 征集进行中';
+                        leadText.style.color = 'rgba(240,192,96,0.9)';
+                    }
                     return;
                 }
                 const days = padZero(Math.floor(diff / (1000 * 60 * 60 * 24)));
                 const hours = padZero(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-                const minutes = padZero(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)));
-                const seconds = padZero(Math.floor((diff % (1000 * 60)) / 1000));
-                const vals = { days, hours, minutes, seconds };
+                const vals = { days, hours };
                 for (let u in vals) {
                     frontFaces[u].textContent = vals[u];
                     backFaces[u].querySelector('span').textContent = vals[u];
@@ -895,7 +806,6 @@
             }
 
             initDisplay();
-            // 开始定时更新
             const intervalId = setInterval(updateCountdown, 1000);
 
             // 页面可见性处理
@@ -919,7 +829,7 @@
 
             // 卡片点击反馈
             document.querySelectorAll('.countdown-card').forEach(card => {
-                card.addEventListener('click', function(e) {
+                card.addEventListener('click', function() {
                     this.style.borderColor = 'rgba(240,192,96,0.7)';
                     this.style.boxShadow =
                         '0 8px 32px rgba(0,0,0,0.3), 0 0 30px rgba(240,192,96,0.5), inset 0 1px 0 rgba(255,255,255,0.1)';
@@ -930,8 +840,10 @@
                 });
             });
 
-            console.log('🎓 老同学聚会倒计时 · 翻牌时钟已启动');
-            console.log('📅 目标时间：2026年7月18日 中午12:00');
+            console.log('🎓 南平一中七六届（三班）50周年征集邀约 · 倒计时已启动');
+            console.log('📅 目标时间：2026年5月22日 00:00:00');
+            console.log('⏳ 活动时间：2026年5月22日 —— 7月11日');
+            console.log('💡 修改目标日期请编辑JS中 targetDate 变量（第430行附近）');
         })();
     </script>
 </body>
